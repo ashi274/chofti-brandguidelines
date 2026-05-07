@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHOFTI — Brand Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --red: #E9002A;
+    --red-dark: #BC0D2C;
+    --cream: #F5F2ED;
+    --white: #FFFFFF;
+    --grey: #A6A7A9;
+    --black: #000000;
+    --text-dark: #1a1a1a;
+    --font-head: 'Fredoka', sans-serif;
+    --font-sub: 'Nunito', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    --radius-sm: 12px;
+    --radius-md: 24px;
+    --radius-lg: 40px;
+    --radius-xl: 60px;
+    --section-pad: 100px 5%;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(16px);
+    border-radius: 50px;
+    padding: 12px 28px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    white-space: nowrap;
+  }
+  nav .nav-logo {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--red);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  nav a {
+    font-family: var(--font-sub);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+  nav a:hover { opacity: 1; color: var(--red); }
+
+  /* ── SECTION LABELS ── */
+  .section-label {
+    display: inline-block;
+    font-family: var(--font-sub);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+
+  /* ── HEADINGS ── */
+  h1, h2, h3 { font-family: var(--font-head); }
+  h1 { font-size: clamp(3rem, 8vw, 7rem); line-height: 1.0; font-weight: 700; }
+  h2 { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.1; font-weight: 700; }
+  h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); font-weight: 600; }
+  p { font-family: var(--font-body); line-height: 1.75; color: #444; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: var(--red);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 6% 80px;
+    text-align: center;
+  }
+  .hero-blob-1 {
+    position: absolute;
+    width: 50vw;
+    max-width: 650px;
+    top: -12%;
+    right: -8%;
+    opacity: 0.35;
+    animation: float1 8s ease-in-out infinite;
+  }
+  .hero-blob-2 {
+    position: absolute;
+    width: 25vw;
+    max-width: 350px;
+    bottom: -5%;
+    right: -2%;
+    opacity: 0.12;
+    animation: float2 10s ease-in-out infinite;
+  }
+  .hero-blob-3 {
+    position: absolute;
+    width: 60vw;
+    max-width: 800px;
+    bottom: -20%;
+    left: -15%;
+    opacity: 0.25;
+    animation: float1 12s ease-in-out infinite;
+    z-index: 1;
+  }
+  @keyframes float1 { 0%,100%{transform:translate(0,0) rotate(0deg)} 50%{transform:translate(-20px,20px) rotate(5deg)} }
+  @keyframes float2 { 0%,100%{transform:translate(0,0) rotate(0deg)} 50%{transform:translate(15px,-15px) rotate(-4deg)} }
+
+  .hero-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+  .hero-content h1 { color: var(--white); margin: 24px 0 18px; }
+  .hero-tagline {
+    font-family: var(--font-sub);
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: rgba(255,255,255,0.7);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 40px;
+  }
+  .hero-logo {
+    height: 90px;
+    display: block;
+    margin: 0 auto 48px;
+    animation: fadeUp 1s ease 0.3s both;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50px;
+    padding: 10px 20px;
+    color: var(--grey);
+    font-family: var(--font-sub);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  .hero-badge .dot { width: 8px; height: 8px; background: var(--red); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--grey);
+    font-family: var(--font-sub);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+  .hero-scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--grey), transparent);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+  @keyframes scrollLine { 0%,100%{opacity:0.3} 50%{opacity:1} }
+
+  /* ── BRAND STORY ── */
+  #story {
+    padding: var(--section-pad);
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .story-blob {
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40vw;
+    max-width: 500px;
+    opacity: 0.06;
+  }
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .story-text h2 { margin-bottom: 28px; }
+  .story-text p { margin-bottom: 20px; font-size: 1.05rem; }
+  .story-text p strong { color: var(--red); font-weight: 700; }
+  .story-stat-row {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .stat-card {
+    background: var(--cream);
+    border-radius: var(--radius-md);
+    padding: 28px 20px;
+    text-align: center;
+  }
+  .stat-card .stat-num {
+    font-family: var(--font-head);
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--red);
+    display: block;
+  }
+  .stat-card .stat-label {
+    font-family: var(--font-sub);
+    font-size: 0.8rem;
+    color: var(--grey);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+  }
+  .story-mascot-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .mascot-bg-blob {
+    position: absolute;
+    width: 110%;
+    opacity: 0.1;
+  }
+  .mascot-img {
+    width: 70%;
+    max-width: 280px;
+    position: relative;
+    z-index: 1;
+    animation: float1 7s ease-in-out infinite;
+  }
+
+  /* ── PERSONALITY ── */
+  #personality {
+    padding: var(--section-pad);
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .personality-header { text-align: center; max-width: 700px; margin: 0 auto 64px; }
+  .personality-header h2 { margin-bottom: 16px; }
+  .personality-header p { font-size: 1.05rem; }
+  .personality-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto 64px;
+  }
+  .trait-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 36px 28px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .trait-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
+  .trait-icon {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .trait-card h3 { margin-bottom: 12px; font-size: 1.15rem; }
+  .trait-card p { font-size: 0.9rem; }
+
+  .voice-section {
+    background: var(--black);
+    border-radius: var(--radius-xl);
+    padding: 64px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    position: relative;
+    overflow: hidden;
+  }
+  .voice-blob {
+    position: absolute;
+    right: -10%;
+    bottom: -20%;
+    width: 50%;
+    opacity: 0.12;
+  }
+  .voice-col h3 { color: var(--white); font-size: 1.3rem; margin-bottom: 28px; }
+  .voice-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-sub);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 6px 20px 6px 0;
+  }
+  .voice-tag.yes { color: var(--red); }
+  .voice-tag.yes::before { content: '✓'; }
+  .voice-tag.no { color: var(--grey); opacity: 0.7; }
+  .voice-tag.no::before { content: '✕'; }
+
+  /* ── COLORS ── */
+  #colors {
+    padding: var(--section-pad);
+    background: var(--white);
+  }
+  .colors-header { max-width: 1100px; margin: 0 auto 56px; }
+  .colors-header h2 { margin-bottom: 16px; }
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto 48px;
+  }
+  .swatch-card {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  }
+  .swatch-color {
+    height: 160px;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+  }
+  .swatch-color span {
+    font-family: var(--font-sub);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+  .swatch-info {
+    background: var(--cream);
+    padding: 20px 24px;
+  }
+  .swatch-info .swatch-name {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .swatch-info .swatch-hex {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--grey);
+  }
+  .color-usage {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .usage-demo {
+    border-radius: var(--radius-md);
+    padding: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .usage-demo-text { font-family: var(--font-sub); font-weight: 700; font-size: 1rem; }
+  .usage-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-family: var(--font-sub);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  #typography {
+    padding: var(--section-pad);
+    background: var(--cream);
+  }
+  .typo-header { max-width: 1100px; margin: 0 auto 56px; }
+  .typo-grid {
+    display: grid;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .typo-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 44px 48px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .typo-meta { border-right: 1px solid rgba(0,0,0,0.08); padding-right: 40px; }
+  .typo-meta .font-role {
+    display: block;
+    font-family: var(--font-sub);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+  .typo-meta .font-name {
+    font-family: var(--font-sub);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+  .typo-meta .font-desc { font-size: 0.8rem; color: var(--grey); }
+  .typo-sample { }
+  .typo-sample.h1-sample {
+    font-family: var(--font-head);
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.0;
+  }
+  .typo-sample.h2-sample {
+    font-family: var(--font-sub);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 800;
+    color: var(--text-dark);
+  }
+  .typo-sample.body-sample {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 420px;
+  }
+
+  /* ── BLOBS ── */
+  #blobs {
+    padding: var(--section-pad);
+    background: var(--white);
+  }
+  .blobs-header { max-width: 1100px; margin: 0 auto 56px; }
+  .blobs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+  }
+  .blob-demo-card {
+    border-radius: var(--radius-md);
+    padding: 48px 36px;
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .blob-demo-card .card-blob {
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-55%);
+  }
+  .blob-demo-card .card-content { position: relative; z-index: 2; }
+  .blob-demo-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+  .blob-demo-card p { font-size: 0.88rem; }
+  .blob-rules {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .blob-rule-item {
+    background: var(--cream);
+    border-radius: var(--radius-sm);
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .blob-rule-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    background: var(--red);
+    color: var(--white);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  .blob-rule-item p { font-size: 0.85rem; }
+  .blob-rule-item strong { display: block; font-family: var(--font-sub); font-weight: 700; margin-bottom: 4px; color: var(--text-dark); }
+
+  /* ── LOGO SYSTEM ── */
+  #logo {
+    padding: var(--section-pad);
+    background: var(--cream);
+  }
+  .logo-header { max-width: 1100px; margin: 0 auto 56px; }
+  .logo-variations {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto 48px;
+  }
+  .logo-var-card {
+    border-radius: var(--radius-md);
+    padding: 48px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+  .logo-var-card img { max-width: 80%; height: auto; max-height: 80px; object-fit: contain; }
+  .logo-var-label {
+    font-family: var(--font-sub);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .logo-rules-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .logo-rule-card {
+    border-radius: var(--radius-md);
+    padding: 36px;
+    background: var(--white);
+  }
+  .logo-rule-card h3 { margin-bottom: 20px; }
+  .logo-rule-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: #555;
+  }
+  .logo-rule-item:last-child { border-bottom: none; }
+  .rule-badge {
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+  }
+  .rule-badge.ok { background: #d4f5e0; color: #1a7a42; }
+  .rule-badge.no { background: #fde0e4; color: #c0001f; }
+
+  /* ── APPLICATIONS ── */
+  #applications {
+    padding: var(--section-pad);
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+  }
+  .app-blob-bg {
+    position: absolute;
+    right: -10%;
+    top: -10%;
+    width: 50%;
+    opacity: 0.08;
+  }
+  .app-blob-bg2 {
+    position: absolute;
+    left: -10%;
+    bottom: -10%;
+    width: 40%;
+    opacity: 0.06;
+  }
+  .app-header { max-width: 1100px; margin: 0 auto 56px; }
+  .app-header h2 { color: var(--white); margin-bottom: 16px; }
+  .app-header p { color: var(--grey); font-size: 1.05rem; }
+  .app-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  /* Social Card */
+  .social-card {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    position: relative;
+  }
+  .social-post {
+    background: var(--red);
+    padding: 36px 28px 28px;
+    aspect-ratio: 4 / 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+  }
+  .social-post-blob {
+    position: absolute;
+    right: -25%;
+    bottom: -20%;
+    width: 70%;
+    opacity: 0.25;
+  }
+  .social-post-logo { height: 48px; width: auto; object-fit: contain; position: relative; z-index: 2; margin-bottom: 24px; }
+  .social-post-text {
+    font-family: var(--font-head);
+    font-size: 1.6rem;
+    color: var(--white);
+    line-height: 1.2;
+    position: relative;
+    z-index: 2;
+  }
+  .social-post-tag {
+    font-family: var(--font-sub);
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+  }
+  .social-meta {
+    background: rgba(255,255,255,0.05);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .social-meta span {
+    font-family: var(--font-sub);
+    font-size: 0.75rem;
+    color: var(--grey);
+    font-weight: 600;
+  }
+
+  /* Packaging Card */
+  .packaging-card {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+  }
+  .packaging-visual {
+    background: var(--cream);
+    padding: 40px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 280px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cup-wrapper { position: relative; z-index: 2; }
+  .cup-body {
+    width: 120px;
+    height: 140px;
+    background: var(--red);
+    border-radius: 10px 10px 40px 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .cup-body::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    height: 60%;
+    background: var(--red-dark);
+    border-radius: 0 0 36px 36px;
+    opacity: 0.5;
+  }
+  .cup-label {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    color: var(--white);
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.04em;
+  }
+  .cup-rim {
+    width: 140px;
+    height: 18px;
+    background: var(--white);
+    border-radius: 50px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  }
+  .cup-scoop {
+    width: 90px;
+    height: 55px;
+    background: var(--white);
+    border-radius: 50px 50px 0 0;
+    margin: 0 auto -4px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cup-scoop-face {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .packaging-bg-blob {
+    position: absolute;
+    width: 90%;
+    opacity: 0.07;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .packaging-meta {
+    background: rgba(0,0,0,0.03);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .packaging-meta span { font-family: var(--font-sub); font-size: 0.75rem; color: var(--grey); font-weight: 600; }
+
+  /* Menu Card */
+  .menu-card {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .menu-header-band {
+    background: var(--red);
+    padding: 24px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .menu-brand-label {
+    font-family: var(--font-sub);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+  }
+  .menu-title-text {
+    font-family: var(--font-head);
+    font-size: 1.4rem;
+    color: var(--white);
+    font-weight: 700;
+  }
+  .menu-body { padding: 20px 24px; }
+  .menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px dashed rgba(0,0,0,0.08);
+    gap: 12px;
+  }
+  .menu-item:last-child { border-bottom: none; }
+  .menu-item-name {
+    font-family: var(--font-sub);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+  }
+  .menu-item-desc {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: var(--grey);
+    margin-top: 2px;
+  }
+  .menu-item-price {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--red);
+    white-space: nowrap;
+  }
+  .menu-meta {
+    background: var(--cream);
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .menu-meta span { font-family: var(--font-sub); font-size: 0.75rem; color: var(--grey); font-weight: 600; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black);
+    padding: 60px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  footer .footer-logo { height: 48px; opacity: 0.8; }
+  footer p {
+    font-family: var(--font-sub);
+    font-size: 0.8rem;
+    color: var(--grey);
+    max-width: 400px;
+  }
+  footer .footer-divider {
+    width: 40px;
+    height: 3px;
+    background: var(--red);
+    border-radius: 3px;
+  }
+  .footer-blob {
+    position: absolute;
+    bottom: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    opacity: 0.04;
+  }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    width: 64px;
+    height: 4px;
+    background: var(--red);
+    border-radius: 4px;
+    margin-bottom: 24px;
+  }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { display: none; }
+    .story-grid { grid-template-columns: 1fr; gap: 40px; }
+    .personality-grid { grid-template-columns: 1fr; }
+    .voice-section { grid-template-columns: 1fr; padding: 40px 28px; }
+    .swatch-grid { grid-template-columns: 1fr 1fr; }
+    .color-usage { grid-template-columns: 1fr; }
+    .typo-card { grid-template-columns: 1fr; gap: 20px; }
+    .typo-meta { border-right: none; padding-right: 0; border-bottom: 1px solid rgba(0,0,0,0.08); padding-bottom: 20px; }
+    .blobs-grid { grid-template-columns: 1fr; }
+    .blob-rules { grid-template-columns: 1fr; }
+    .logo-variations { grid-template-columns: 1fr; }
+    .logo-rules-grid { grid-template-columns: 1fr; }
+    .app-grid { grid-template-columns: 1fr; }
+    .story-stat-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    :root { --section-pad: 70px 5%; }
+    .swatch-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 2.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">CHOFTI</a>
+  <a href="#story">Story</a>
+  <a href="#personality">Personality</a>
+  <a href="#colors">Colors</a>
+  <a href="#typography">Type</a>
+  <a href="#blobs">Blobs</a>
+  <a href="#logo">Logo</a>
+  <a href="#applications">Apps</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <img class="hero-blob-1" src="Vector 23.png" alt="">
+  <img class="hero-blob-2" src="Vector 25.png" alt="">
+  <img class="hero-blob-3" src="Vector 22.png" alt="">
+
+  <div class="hero-content">
+    <img class="hero-logo" src="chofi-logo-white-hr.png" alt="CHOFTI Mascot White" style="height: 140px; margin-bottom: 32px;">
+    <h1>Choose Your CHOFTI.</h1>
+    <p class="hero-tagline" style="color: rgba(255,255,255,0.8);">Official Brand System — Visual Identity, Voice & Usage</p>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    SCROLL
+  </div>
+</section>
+
+<!-- BRAND STORY -->
+<section id="story">
+  <img class="story-blob" src="Vector 22.png" alt="">
+
+  <div class="story-grid">
+    <div class="story-text fade-in">
+      <span class="section-label">01 — Brand Story</span>
+      <div class="section-divider"></div>
+      <h2>More than ice cream.<br>It's a mood.</h2>
+      <p>CHOFTI was born from one simple frustration — why does choosing dessert have to feel boring? We set out to change that. <strong>Every scoop is a statement.</strong> Every flavor is a feeling.</p>
+      <p>We believe in the freedom to be weird, to be bold, to choose what makes you happy. CHOFTI is the brand that doesn't take itself too seriously — because ice cream shouldn't either.</p>
+      <p>We're playful but never careless. Clever but never cold. And we always, always <strong>Choose our CHOFTI.</strong></p>
+
+      <div class="story-stat-row">
+        <div class="stat-card">
+          <span class="stat-num">18+</span>
+          <span class="stat-label">Flavors</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Choices</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">1</span>
+          <span class="stat-label">Vibe</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-mascot-wrap fade-in">
+      <img class="mascot-bg-blob" src="Vector 22.png" alt="">
+      <img class="mascot-img" src="chofi-logo-hr.png" alt="CHOFTI Mascot">
+    </div>
+  </div>
+</section>
+
+<!-- BRAND PERSONALITY -->
+<section id="personality">
+  <div class="personality-header fade-in">
+    <span class="section-label">02 — Personality</span>
+    <div class="section-divider" style="margin: 0 auto 24px;"></div>
+    <h2>The Thoughtful Jester</h2>
+    <p>CHOFTI lives at the intersection of wit and warmth. We're the friend who makes you laugh but also genuinely cares — self-aware, irreverent, and always on your side.</p>
+  </div>
+
+  <div class="personality-grid">
+    <div class="trait-card fade-in">
+      <div class="trait-icon">🎭</div>
+      <h3>Playful</h3>
+      <p>We don't take ourselves seriously. Every touchpoint should feel fun, light, and slightly unexpected — like a smile you didn't see coming.</p>
+    </div>
+    <div class="trait-card fade-in">
+      <div class="trait-icon">✨</div>
+      <h3>Clever</h3>
+      <p>Our wit is earned, not forced. We're smart about being fun — copy has layers, visuals have jokes, and nothing is ever generic.</p>
+    </div>
+    <div class="trait-card fade-in">
+      <div class="trait-icon">🔥</div>
+      <h3>Rebellious</h3>
+      <p>We break boring routines. CHOFTI exists as the antidote to ordinary — we challenge the norm with a wink, not a scowl.</p>
+    </div>
+    <div class="trait-card fade-in">
+      <div class="trait-icon">💬</div>
+      <h3>Self-Aware</h3>
+      <p>We know what we are: a delicious ice cream brand. We lean into that with confidence and humour rather than pretending to be something else.</p>
+    </div>
+    <div class="trait-card fade-in">
+      <div class="trait-icon">🧡</div>
+      <h3>Warm</h3>
+      <p>Behind every joke is genuine care. We're for people who want to enjoy themselves — and we genuinely want that for them too.</p>
+    </div>
+    <div class="trait-card fade-in">
+      <div class="trait-icon">🗽</div>
+      <h3>Free</h3>
+      <p>Choice is sacred. CHOFTI stands for the freedom to pick whatever makes you feel good, without rules or judgment.</p>
+    </div>
+  </div>
+
+  <div class="voice-section fade-in">
+    <img class="voice-blob" src="Vector 21.png" alt="">
+    <div class="voice-col">
+      <h3>We sound like…</h3>
+      <div>
+        <span class="voice-tag yes">Fun and light</span>
+        <span class="voice-tag yes">Conversational</span>
+        <span class="voice-tag yes">Witty and sharp</span>
+        <span class="voice-tag yes">Warm and relatable</span>
+        <span class="voice-tag yes">Slightly cheeky</span>
+        <span class="voice-tag yes">Honest and direct</span>
+        <span class="voice-tag yes">Self-aware</span>
+      </div>
+    </div>
+    <div class="voice-col">
+      <h3>We never sound like…</h3>
+      <div>
+        <span class="voice-tag no">Corporate</span>
+        <span class="voice-tag no">Preachy</span>
+        <span class="voice-tag no">Trendy slang</span>
+        <span class="voice-tag no">Over-explained</span>
+        <span class="voice-tag no">Aggressive</span>
+        <span class="voice-tag no">Formal or stiff</span>
+        <span class="voice-tag no">Try-hard</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLORS -->
+<section id="colors">
+  <div class="colors-header fade-in">
+    <span class="section-label">03 — Color System</span>
+    <div class="section-divider"></div>
+    <h2>A palette with personality.</h2>
+    <p>Bold enough to stop a scroll. Warm enough to feel like home. Our colors are never accidental.</p>
+  </div>
+
+  <div class="swatch-grid">
+    <div class="swatch-card fade-in">
+      <div class="swatch-color" style="background:#E9002A;">
+        <span style="color:rgba(255,255,255,0.7);">PRIMARY</span>
+      </div>
+      <div class="swatch-info">
+        <span class="swatch-name">Primary Red</span>
+        <span class="swatch-hex">#E9002A — RGB 233, 0, 42</span>
+      </div>
+    </div>
+    <div class="swatch-card fade-in">
+      <div class="swatch-color" style="background:#BC0D2C;">
+        <span style="color:rgba(255,255,255,0.7);">SECONDARY</span>
+      </div>
+      <div class="swatch-info">
+        <span class="swatch-name">Deep Red</span>
+        <span class="swatch-hex">#BC0D2C — RGB 188, 13, 44</span>
+      </div>
+    </div>
+    <div class="swatch-card fade-in">
+      <div class="swatch-color" style="background:#F5F2ED;">
+        <span style="color:rgba(0,0,0,0.3);">CREAM</span>
+      </div>
+      <div class="swatch-info">
+        <span class="swatch-name">Cream</span>
+        <span class="swatch-hex">#F5F2ED — RGB 245, 242, 237</span>
+      </div>
+    </div>
+    <div class="swatch-card fade-in">
+      <div class="swatch-color" style="background:#FFFFFF; border: 1px solid rgba(0,0,0,0.06);">
+        <span style="color:rgba(0,0,0,0.25);">WHITE</span>
+      </div>
+      <div class="swatch-info">
+        <span class="swatch-name">White</span>
+        <span class="swatch-hex">#FFFFFF — Pure white</span>
+      </div>
+    </div>
+    <div class="swatch-card fade-in">
+      <div class="swatch-color" style="background:#A6A7A9;">
+        <span style="color:rgba(255,255,255,0.7);">GREY</span>
+      </div>
+      <div class="swatch-info">
+        <span class="swatch-name">Grey</span>
+        <span class="swatch-hex">#A6A7A9 — RGB 166, 167, 169</span>
+      </div>
+    </div>
+    <div class="swatch-card fade-in">
+      <div class="swatch-color" style="background:#000000;">
+        <span style="color:rgba(255,255,255,0.4);">BLACK</span>
+      </div>
+      <div class="swatch-info">
+        <span class="swatch-name">Black</span>
+        <span class="swatch-hex">#000000 — Pure black</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="color-usage" style="max-width:1100px; margin: 40px auto 0;">
+    <div class="usage-demo fade-in" style="background: var(--red);">
+      <div>
+        <div class="usage-demo-text" style="color:var(--white); font-size:1.1rem; margin-bottom:6px;">Red Background</div>
+        <div style="font-family:var(--font-body); font-size:0.82rem; color:rgba(255,255,255,0.65);">Use white logo + text. High impact moments.</div>
+      </div>
+      <button class="usage-btn" style="background:var(--white); color:var(--red);">Order Now</button>
+    </div>
+    <div class="usage-demo fade-in" style="background: var(--cream); border: 1px solid rgba(0,0,0,0.08);">
+      <div>
+        <div class="usage-demo-text" style="color:var(--text-dark); font-size:1.1rem; margin-bottom:6px;">Cream Background</div>
+        <div style="font-family:var(--font-body); font-size:0.82rem; color:var(--grey);">Use black logo + red accents. Everyday usage.</div>
+      </div>
+      <button class="usage-btn" style="background:var(--red); color:var(--white);">Explore</button>
+    </div>
+    <div class="usage-demo fade-in" style="background: var(--black);">
+      <div>
+        <div class="usage-demo-text" style="color:var(--white); font-size:1.1rem; margin-bottom:6px;">Black Background</div>
+        <div style="font-family:var(--font-body); font-size:0.82rem; color:var(--grey);">Use white logo. Premium & editorial contexts.</div>
+      </div>
+      <button class="usage-btn" style="background:var(--red); color:var(--white);">Discover</button>
+    </div>
+    <div class="usage-demo fade-in" style="background: var(--white); border: 1px solid rgba(0,0,0,0.08);">
+      <div>
+        <div class="usage-demo-text" style="color:var(--text-dark); font-size:1.1rem; margin-bottom:6px;">White Background</div>
+        <div style="font-family:var(--font-body); font-size:0.82rem; color:var(--grey);">Use black logo. Clean, content-first layouts.</div>
+      </div>
+      <button class="usage-btn" style="background:var(--black); color:var(--white);">Learn More</button>
+    </div>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section id="typography">
+  <div class="typo-header fade-in">
+    <span class="section-label">04 — Typography</span>
+    <div class="section-divider"></div>
+    <h2>Words with character.</h2>
+    <p>Our type system is warm, rounded, and intentionally friendly — never cold, never generic.</p>
+  </div>
+
+  <div class="typo-grid">
+    <div class="typo-card fade-in">
+      <div class="typo-meta">
+        <span class="font-role">Display</span>
+        <div class="font-name">Fredoka</div>
+        <div class="font-desc">Bold, rounded, playful. For all headlines, hero copy, and brand moments.</div>
+      </div>
+      <div class="typo-sample h1-sample">Choose Your CHOFTI.</div>
+    </div>
+    <div class="typo-card fade-in">
+      <div class="typo-meta">
+        <span class="font-role">Subheading</span>
+        <div class="font-name">Nunito</div>
+        <div class="font-desc">Rounded but refined. For subheadings, UI labels, and callouts.</div>
+      </div>
+      <div class="typo-sample h2-sample">Playful. Clever. Delicious.</div>
+    </div>
+    <div class="typo-card fade-in">
+      <div class="typo-meta">
+        <span class="font-role">Body</span>
+        <div class="font-name">Open Sans</div>
+        <div class="font-desc">Neutral and highly readable. For descriptions, captions, and long-form content.</div>
+      </div>
+      <div class="typo-sample body-sample">CHOFTI isn't just ice cream — it's the permission slip you give yourself to enjoy something extraordinary on an ordinary day. We exist for the scoops that matter.</div>
+    </div>
+  </div>
+
+  <div style="max-width:1100px; margin: 28px auto 0;">
+    <div class="fade-in" style="background:var(--white); border-radius:var(--radius-md); padding:40px 48px;">
+      <div style="font-family:var(--font-sub); font-size:0.7rem; font-weight:800; letter-spacing:0.18em; text-transform:uppercase; color:var(--red); margin-bottom:28px;">Type Scale</div>
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        <div style="display:flex; align-items:baseline; gap:20px; flex-wrap:wrap;">
+          <span style="font-family:var(--font-sub); font-size:0.72rem; color:var(--grey); font-weight:600; min-width:80px;">H1 / 64px</span>
+          <span style="font-family:var(--font-head); font-size:clamp(2.4rem,5vw,4rem); font-weight:700;">CHOFTI</span>
+        </div>
+        <div style="display:flex; align-items:baseline; gap:20px; flex-wrap:wrap; border-top:1px solid rgba(0,0,0,0.06); padding-top:20px;">
+          <span style="font-family:var(--font-sub); font-size:0.72rem; color:var(--grey); font-weight:600; min-width:80px;">H2 / 40px</span>
+          <span style="font-family:var(--font-head); font-size:clamp(1.6rem,3vw,2.5rem); font-weight:700;">Choose Your Flavour</span>
+        </div>
+        <div style="display:flex; align-items:baseline; gap:20px; flex-wrap:wrap; border-top:1px solid rgba(0,0,0,0.06); padding-top:20px;">
+          <span style="font-family:var(--font-sub); font-size:0.72rem; color:var(--grey); font-weight:600; min-width:80px;">H3 / 24px</span>
+          <span style="font-family:var(--font-sub); font-size:1.5rem; font-weight:800;">Today's Special: Berry Bliss</span>
+        </div>
+        <div style="display:flex; align-items:baseline; gap:20px; flex-wrap:wrap; border-top:1px solid rgba(0,0,0,0.06); padding-top:20px;">
+          <span style="font-family:var(--font-sub); font-size:0.72rem; color:var(--grey); font-weight:600; min-width:80px;">Body / 16px</span>
+          <span style="font-family:var(--font-body); font-size:1rem; color:#555;">Made with real ingredients, real joy, and zero boring choices.</span>
+        </div>
+        <div style="display:flex; align-items:baseline; gap:20px; flex-wrap:wrap; border-top:1px solid rgba(0,0,0,0.06); padding-top:20px;">
+          <span style="font-family:var(--font-sub); font-size:0.72rem; color:var(--grey); font-weight:600; min-width:80px;">Label / 11px</span>
+          <span style="font-family:var(--font-sub); font-size:0.68rem; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; color:var(--grey);">Limited Time Offer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOB SYSTEM -->
+<section id="blobs">
+  <div class="blobs-header fade-in">
+    <span class="section-label">05 — Blob System</span>
+    <div class="section-divider"></div>
+    <h2>Shape with a soul.</h2>
+    <p>Our blobs aren't decorations — they're a core part of the visual language. Organic, fluid, and full of personality.</p>
+  </div>
+
+  <div class="blobs-grid">
+    <!-- Expressive -->
+    <div class="blob-demo-card fade-in" style="background: var(--black);">
+      <img class="card-blob" src="Vector 23.png" alt="" style="opacity:0.9; transform: translate(-50%,-50%) rotate(-10deg);">
+      <div class="card-content">
+        <span class="section-label" style="color:var(--red);">Style 01</span>
+        <h3 style="color:var(--white); margin-bottom:8px;">Expressive Blobs</h3>
+        <p style="color:var(--grey); font-size:0.88rem;">High contrast. Used for highlights, hero sections, and emotional peaks. Bold, attention-grabbing. Max 20% of any layout.</p>
+      </div>
+    </div>
+
+    <!-- Subtle -->
+    <div class="blob-demo-card fade-in" style="background: var(--cream);">
+      <img class="card-blob" src="Vector 24.png" alt="" style="opacity:0.06; transform: translate(-50%,-50%) rotate(5deg);">
+      <div class="card-content">
+        <span class="section-label" style="color:#888;">Style 02</span>
+        <h3 style="color:var(--text-dark); margin-bottom:8px;">Subtle Blobs</h3>
+        <p style="font-size:0.88rem;">Tonal. Same-family colors — slightly lighter or darker. Used as background depth, framing, and texture. At least 80% of blob usage.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="blob-rules">
+    <div class="blob-rule-item fade-in">
+      <div class="blob-rule-icon">↗</div>
+      <div>
+        <p><strong>Flow in one direction</strong>Blobs should appear to move consistently — top-right, bottom-left, etc. Never scatter randomly.</p>
+      </div>
+    </div>
+    <div class="blob-rule-item fade-in">
+      <div class="blob-rule-icon">◱</div>
+      <div>
+        <p><strong>Always partially cropped</strong>Blobs should bleed off the edges of their container. Never fully contained inside a frame.</p>
+      </div>
+    </div>
+    <div class="blob-rule-item fade-in">
+      <div class="blob-rule-icon">80</div>
+      <div>
+        <p><strong>80/20 rule</strong>80% subtle blobs for depth. 20% expressive blobs for impact. This keeps layouts from feeling chaotic.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blob assets display -->
+  <div style="max-width:1100px; margin:40px auto 0; background:var(--cream); border-radius:var(--radius-md); padding:40px 48px;" class="fade-in">
+    <div style="font-family:var(--font-sub); font-size:0.7rem; font-weight:800; letter-spacing:0.18em; text-transform:uppercase; color:var(--red); margin-bottom:28px;">All Blob Shapes</div>
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:24px; align-items:center;">
+      <div style="text-align:center;">
+        <div style="background:var(--black); border-radius:var(--radius-sm); padding:16px; margin-bottom:10px;">
+          <img src="Vector 25.png" alt="Blob 25" style="width:100%; max-width:80px; height:auto;">
+        </div>
+        <span style="font-family:var(--font-sub); font-size:0.7rem; color:var(--grey); font-weight:600;">Cross</span>
+      </div>
+      <div style="text-align:center;">
+        <div style="background:var(--black); border-radius:var(--radius-sm); padding:16px; margin-bottom:10px;">
+          <img src="Vector 21.png" alt="Blob 21" style="width:100%; max-width:80px; height:auto;">
+        </div>
+        <span style="font-family:var(--font-sub); font-size:0.7rem; color:var(--grey); font-weight:600;">Organic</span>
+      </div>
+      <div style="text-align:center;">
+        <div style="background:var(--black); border-radius:var(--radius-sm); padding:16px; margin-bottom:10px;">
+          <img src="Vector 23.png" alt="Blob 23" style="width:100%; max-width:80px; height:auto; opacity:0.8;">
+        </div>
+        <span style="font-family:var(--font-sub); font-size:0.7rem; color:var(--grey); font-weight:600;">Fluid</span>
+      </div>
+      <div style="text-align:center;">
+        <div style="background:var(--black); border-radius:var(--radius-sm); padding:16px; margin-bottom:10px;">
+          <img src="Vector 22.png" alt="Blob 22" style="width:100%; max-width:80px; height:auto;">
+        </div>
+        <span style="font-family:var(--font-sub); font-size:0.7rem; color:var(--grey); font-weight:600;">Soft</span>
+      </div>
+      <div style="text-align:center;">
+        <div style="background:var(--black); border-radius:var(--radius-sm); padding:16px; margin-bottom:10px;">
+          <img src="Vector 23.png" alt="Blob 23" style="width:100%; max-width:80px; height:auto;">
+        </div>
+        <span style="font-family:var(--font-sub); font-size:0.7rem; color:var(--grey); font-weight:600;">Bold</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO SYSTEM -->
+<section id="logo">
+  <div class="logo-header fade-in">
+    <span class="section-label">06 — Logo System</span>
+    <div class="section-divider"></div>
+    <h2>The face of CHOFTI.</h2>
+    <p>Our logo combines a playful wordmark with a mascot character — together they're unmistakable. Use with care.</p>
+  </div>
+
+  <div style="max-width:1100px; margin: 0 auto 48px;" class="fade-in">
+    <div style="background:var(--white); border-radius:var(--radius-md); padding:60px; text-align:center; position:relative; overflow:hidden;">
+      <img style="position:absolute; right:-10%; top:-10%; width:40%; opacity:0.04;" src="Vector 23.png" alt="">
+      <img style="max-width: 340px; width:70%; height:auto;" src="chofti-logo-black.png" alt="CHOFTI Logo Black">
+      <p style="margin-top:28px; font-size:0.85rem; font-family:var(--font-sub); color:var(--grey); font-weight:600;">Primary mark — black on cream or white backgrounds</p>
+    </div>
+  </div>
+
+  <div class="logo-variations">
+    <div class="logo-var-card fade-in" style="background:var(--red);">
+      <img src="chofti-logo-white.png" alt="White logo">
+      <span class="logo-var-label" style="color:rgba(255,255,255,0.7);">White — on Red</span>
+    </div>
+    <div class="logo-var-card fade-in" style="background:var(--black);">
+      <img src="chofti-logo-white.png" alt="White logo on black">
+      <span class="logo-var-label" style="color:var(--grey);">White — on Black</span>
+    </div>
+    <div class="logo-var-card fade-in" style="background:var(--cream); border: 1px solid rgba(0,0,0,0.06);">
+      <img src="chofti-logo-black.png" alt="Black logo">
+      <span class="logo-var-label" style="color:var(--grey);">Black — on Cream</span>
+    </div>
+  </div>
+
+  <!-- Mascot row -->
+  <div style="max-width:1100px; margin: 24px auto 48px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px;" class="fade-in">
+    <div style="background:var(--cream); border-radius:var(--radius-md); padding:36px; display:flex; flex-direction:column; align-items:center; gap:20px; border:1px solid rgba(0,0,0,0.06);">
+      <img src="chofi-logo-hr.png" alt="Mascot cream" style="width:100px; height:auto;">
+      <span class="logo-var-label" style="color:var(--grey);">Mascot — Cream</span>
+    </div>
+    <div style="background:var(--black); border-radius:var(--radius-md); padding:36px; display:flex; flex-direction:column; align-items:center; gap:20px;">
+      <img src="chofi-logo-black-hr.png" alt="Mascot dark" style="width:100px; height:auto; filter:invert(1); opacity:0.8;">
+      <span class="logo-var-label" style="color:var(--grey);">Mascot — White</span>
+    </div>
+    <div style="background:var(--red); border-radius:var(--radius-md); padding:36px; display:flex; flex-direction:column; align-items:center; gap:20px;">
+      <img src="chofi-logo-white-hr.png" alt="Mascot white" style="width:100px; height:auto;">
+      <span class="logo-var-label" style="color:rgba(255,255,255,0.7);">Mascot — Red</span>
+    </div>
+  </div>
+
+  <div class="logo-rules-grid">
+    <div class="logo-rule-card fade-in">
+      <h3 style="color:#1a7a42;">✓ Do this</h3>
+      <div class="logo-rule-item">
+        <div class="rule-badge ok">✓</div>
+        Use on solid, high-contrast backgrounds
+      </div>
+      <div class="logo-rule-item">
+        <div class="rule-badge ok">✓</div>
+        Maintain clear space equal to the height of the "O"
+      </div>
+      <div class="logo-rule-item">
+        <div class="rule-badge ok">✓</div>
+        Use approved color versions only
+      </div>
+      <div class="logo-rule-item">
+        <div class="rule-badge ok">✓</div>
+        Scale proportionally and uniformly
+      </div>
+      <div class="logo-rule-item">
+        <div class="rule-badge ok">✓</div>
+        Use white on red or black backgrounds
+      </div>
+    </div>
+    <div class="logo-rule-card fade-in">
+      <h3 style="color:#c0001f;">✕ Never do this</h3>
+      <div class="logo-rule-item">
+        <div class="rule-badge no">✕</div>
+        Stretch, skew, or distort the logo
+      </div>
+      <div class="logo-rule-item">
+        <div class="rule-badge no">✕</div>
+        Add drop shadows or gradients to the logo
+      </div>
+      <div class="logo-rule-item">
+        <div class="rule-badge no">✕</div>
+        Separate the mascot from the wordmark
+      </div>
+      <div class="logo-rule-item">
+        <div class="rule-badge no">✕</div>
+        Place on busy or patterned backgrounds
+      </div>
+      <div class="logo-rule-item">
+        <div class="rule-badge no">✕</div>
+        Use unauthorised colours or outlines
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATIONS -->
+<section id="applications">
+  <img class="app-blob-bg" src="Vector 23.png" alt="">
+  <img class="app-blob-bg2" src="Vector 21.png" alt="">
+
+  <div class="app-header fade-in">
+    <span class="section-label">07 — Applications</span>
+    <div class="section-divider"></div>
+    <h2>CHOFTI in the wild.</h2>
+    <p>How the brand comes alive across social, packaging, and menus.</p>
+  </div>
+
+  <div class="app-grid">
+    <!-- Social -->
+    <div class="fade-in">
+      <div style="font-family:var(--font-sub); font-size:0.7rem; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; color:var(--grey); margin-bottom:14px;">Social Media</div>
+      <div class="social-card">
+        <div class="social-post">
+          <img class="social-post-blob" src="Vector 25.png" alt="">
+          <img class="social-post-logo" src="chofi-logo-white-hr.png" alt="CHOFTI Mascot">
+          <div class="social-post-text">One scoop.<br>All the feels.</div>
+          <div class="social-post-tag">#ChooseYourChofti</div>
+        </div>
+        <div class="social-meta">
+          <span>Instagram Post — 4:5</span>
+          <span>❤️ 2.4k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Packaging -->
+    <div class="fade-in">
+      <div style="font-family:var(--font-sub); font-size:0.7rem; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; color:var(--grey); margin-bottom:14px;">Packaging</div>
+      <div class="packaging-card">
+        <div class="packaging-visual" style="padding:0;">
+          <img src="chofti_cup_mockup.png" alt="CHOFTI Cup Mockup" style="width:100%; height:auto; display:block;">
+        </div>
+        <div class="packaging-meta">
+          <span>Ice Cream Cup — 250ml</span>
+          <span>Packaging mockup</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu -->
+    <div class="fade-in">
+      <div style="font-family:var(--font-sub); font-size:0.7rem; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; color:var(--grey); margin-bottom:14px;">Menu Style</div>
+        <div class="menu-card" style="padding:0; background:none;">
+          <img src="chofti_menu_mockup.png" alt="CHOFTI Menu Mockup" style="width:100%; height:auto; display:block;">
+        </div>
+        <div class="menu-meta">
+          <span>In-store Menu Card</span>
+          <span>A5 format</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img class="footer-blob" src="Vector 22.png" alt="">
+  <img class="footer-logo" src="chofti-logo-white.png" alt="CHOFTI">
+  <div class="footer-divider"></div>
+  <p>CHOFTI Brand Guidelines 2025. All assets, colors, fonts, and usage rules described herein are proprietary to the CHOFTI brand.</p>
+  <p style="font-size:0.72rem; opacity:0.4;">Choose Your CHOFTI.</p>
+</footer>
+
+<script>
+  // Intersection Observer for fade-in animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
